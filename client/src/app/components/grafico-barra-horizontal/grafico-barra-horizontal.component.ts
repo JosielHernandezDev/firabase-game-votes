@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 // import { multi } from './data';
 
 @Component({
@@ -7,24 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grafico-barra-horizontal.component.css']
 })
 export class GraficoBarraHorizontalComponent implements OnInit {
-   results: any[] = [
-    {
-      "name":"Mario",
-      "value":20
-    },
-    {
-      "name":"Packman",
-      "value":20
-    },
-    {
-      "name":"COF",
-      "value":200
-    },
-    {
-      "name":"COF",
-      "value":200
-    }
-   ];
+  @Input() results: any[] = [];
+
 
 
   // options
@@ -41,20 +25,20 @@ export class GraficoBarraHorizontalComponent implements OnInit {
   colorScheme = 'nightLights'//
 
 
-  interval;
+  // interval;
 
   constructor() {
     /// tiempo real
-    this.interval=setInterval(()=>{
+    // this.interval=setInterval(()=>{
 
-      const newResult = [...this.results];
+    //   const newResult = [...this.results];
 
-      for(let i in newResult){
-        newResult[i].value = Math.round(Math.random()*500);  
-      }
+    //   for(let i in newResult){
+    //     newResult[i].value = Math.round(Math.random()*500);  
+    //   }
 
-      this.results = [...newResult]
-    },1500)
+    //   this.results = [...newResult]
+    // },1500)
   }
 
  onSelect(data:any): void {
@@ -67,7 +51,7 @@ export class GraficoBarraHorizontalComponent implements OnInit {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
 
-    clearInterval(this.interval);
+    // clearInterval(this.interval);
     
   }
 

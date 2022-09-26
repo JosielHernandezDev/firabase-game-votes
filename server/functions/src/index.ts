@@ -39,9 +39,9 @@ app.get("/goty", async (req, resp) => {
   const docsSnap = await gotyRef.get();
   const data = docsSnap.docs.map((item) => item.data());
 
-  resp.json({
-    msg: data,
-  });
+  return resp.json(
+    data
+  );
 });
 
 app.post("/goty/:id", async (req, resp) => {

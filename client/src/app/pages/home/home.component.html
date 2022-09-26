@@ -3,6 +3,9 @@
 
 <div class="row">
     <div class="col">
-        <app-grafico-barra-horizontal></app-grafico-barra-horizontal>
+        <button class="btn btn-primary" onclick="getData">Actualizar</button>
+    </div>
+    <div class="col">
+        <app-grafico-barra-horizontal [results]="juegos"></app-grafico-barra-horizontal>
     </div>
 </div>
